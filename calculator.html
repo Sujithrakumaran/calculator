@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+<style>
+    body{
+        overflow: hidden;
+    }
+    #calbase{
+        border: solid rgb(44, 44, 44);
+        border-radius: 20px;
+        height: 400px; 
+        width: 400px;
+        position: relative;
+        top:100px; left:460px;
+        background-color: rgb(201, 190, 190);
+    }
+    #display{
+        border: solid rgb(44, 44, 44);
+        border-radius: 5px;
+        position: relative;
+        margin-top: 35px;
+        margin-left: 20px;
+        height: 50px;width: 350px;
+        font-size: 32px;
+        background-color: rgb(183, 228, 78);
+    }
+    #container{ 
+        position: relative; top:-170px; left:500px;
+        height: 300px;
+        width: 350px;
+        /* border: solid; */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+    #calbtn{
+        height: 35px;
+        width: 45px;
+        
+    }
+    button{
+        height: 35px;
+        width: 45px;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+    
+</style>
+</head>
+<body>
+    <div id="calbase">
+        <input id="display" type="tel" ></input>
+
+    </div>
+    <div id="container">
+        <div id="calbtn"><button id = "btn" value ="1" onclick="displaynum()" >1</button></div>
+        <div id="calbtn"><button id = "btn2" value ="2" onclick="displaynum2()">2</button></div>
+        <div id="calbtn"><button id = "btn3" value ="3" onclick="displaynum3()">3</button></div>
+        <div id="calbtn"><button id = "mul"  onclick="displaymul()">x</button></div>
+        <div id="calbtn"><button id = "div"  onclick="displaydiv()">/</button></div>
+        <div id="calbtn"><button id = "btn4" value ="4" onclick="displaynum4()">4</button></div>
+        <div id="calbtn"><button id = "btn5" value ="5" onclick="displaynum5()">5</button></div>
+        <div id="calbtn"><button id = "btn6" value ="6" onclick="displaynum6()">6</button></div>
+        <div id="calbtn"><button id="add"  onclick="displayadd()">+</button></div>
+        <div id="calbtn"><button id = "sub"  onclick="displaysub()">-</button></div>
+        <div id="calbtn"><button id = "btn7" value ="7" onclick="displaynum7()">7</button></div>
+        <div id="calbtn"><button id = "btn8" value ="8" onclick="displaynum8()">8</button></div>
+        <div id="calbtn"><button id = "btn9" value ="9" onclick="displaynum9()">9</button></div>
+        <div id="calbtn"><button id = "btn0" value ="0" onclick="displaynum0()">0</button></div>
+        <div id="calbtn"><button id = "decimal"  onclick="displaydeci()" >.</button></div> 
+        <div id="calbtn"><button id="open" onclick="displayopen()">(</button></div>
+        <div id="calbtn"><button id="close" onclick="displayclose()">)</button></div>
+        <div id="calbtn"><button id = "clear"  onclick="displayclr()">Clr</button></div>
+        <div id="calbtn"><button id = "allclear" onclick="displayallclr()">AC</button></div>
+        <div id="calbtn"><button id="equal" onclick="displayequal()">=</button></div>
+        
+    </div>
+    <script>
+        function displaynum(){
+        document.getElementById("display").value += "1";}
+        
+        function displaynum2(){
+        document.getElementById("display").value += "2";}
+
+        function displaynum3(){
+        document.getElementById("display").value += "3";}
+
+        function displaynum4(){
+        document.getElementById("display").value += "4";}
+
+        function displaynum5(){
+        document.getElementById("display").value += "5";}
+
+        function displaynum6(){
+        document.getElementById("display").value += "6";}
+
+        function displaynum7(){
+        document.getElementById("display").value +="7";}
+
+        function displaynum8(){
+        document.getElementById("display").value += "8";}
+
+        function displaynum9(){
+        document.getElementById("display").value += "9";}
+
+        function displaynum0(){
+        document.getElementById("display").value += "0";}
+
+        function displayadd(){
+          document.getElementById("display").value += "+";  }
+        
+        function displaymul(){
+        document.getElementById("display").value += "*";  }
+
+        function displaydiv(){
+        document.getElementById("display").value += "/";  }
+
+        function displaysub(){
+        document.getElementById("display").value += "-";  }
+
+        function displayopen(){
+        document.getElementById("display").value += "(";  }
+
+        function displayclose(){
+        document.getElementById("display").value += ")";  }
+
+        function displaydeci(){
+        document.getElementById("display").value += ".";  }
+
+        function displayallclr(){
+        document.getElementById("display").value =[] ;  }
+
+        function displayclr(){
+        let output= document.getElementById("display").value ;
+        let newoutput= output.slice(0,-1);
+        document.getElementById("display").value = newoutput;
+
+        } 
+       
+        
+        function displayequal(){
+            if(document.getElementById("display").value == [] ){
+                document.getElementById("display").value = "=";
+            }
+        
+            else{
+           let num2= document.getElementById("display").value;
+           let result=eval(num2);
+           document.getElementById("display").value= result;}
+          }
+          
+      
+    </script>
+    
+</body>
+</html>
